@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nikolay Nikolaev - Professional Web Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=JetBrains+Mono:wght@400&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#444748",
+                    "inverse-on-surface": "#f2f0f0",
+                    "inverse-primary": "#6dd5e4",
+                    "surface-container-highest": "#e4e2e2",
+                    "surface": "#fbf9f8",
+                    "on-primary-fixed-variant": "#004f57",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e9e8e7",
+                    "surface-bright": "#fbf9f8",
+                    "on-background": "#1b1c1c",
+                    "on-secondary-container": "#646464",
+                    "on-error": "#ffffff",
+                    "outline": "#6d797b",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#303031",
+                    "surface-tint": "#006973",
+                    "on-secondary-fixed-variant": "#474747",
+                    "surface-container-low": "#f5f3f3",
+                    "primary-fixed": "#92f1ff",
+                    "on-tertiary-container": "#2c3030",
+                    "secondary-fixed": "#e2e2e2",
+                    "primary": "#006973",
+                    "primary-container": "#34a5b3",
+                    "secondary-container": "#e2e2e2",
+                    "surface-variant": "#e4e2e2",
+                    "tertiary-fixed": "#e1e3e3",
+                    "tertiary": "#5c5f5f",
+                    "error": "#ba1a1a",
+                    "background": "#fbf9f8",
+                    "tertiary-fixed-dim": "#c4c7c7",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#bdc9cb",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "secondary": "#5e5e5e",
+                    "on-surface-variant": "#3d494b",
+                    "on-primary-fixed": "#001f23",
+                    "on-primary-container": "#00353b",
+                    "surface-container": "#efeded",
+                    "on-surface": "#1b1c1c",
+                    "surface-dim": "#dbdad9",
+                    "on-tertiary-fixed": "#191c1d",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "tertiary-container": "#949797",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#6dd5e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-page": "64px",
+                    "container-max": "1200px",
+                    "stack-lg": "24px",
+                    "gutter": "32px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "section-gap": "128px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "manrope"
+                    ],
+                    "headline-xl": [
+                            "manrope"
+                    ],
+                    "body-md": [
+                            "inter"
+                    ],
+                    "code-snippet": [
+                            "jetbrainsMono"
+                    ],
+                    "headline-xl-mobile": [
+                            "manrope"
+                    ],
+                    "label-caps": [
+                            "inter"
+                    ],
+                    "headline-lg": [
+                            "manrope"
+                    ],
+                    "body-lg": [
+                            "inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-xl": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.05",
+                                    "letterSpacing": "-0.03em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "code-snippet": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-xl-mobile": [
+                            "42px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.15",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+        }
+        .btn-primary {
+            background-color: #34a5b3;
+            color: #00353b;
+            transition: all 0.2s ease-in-out;
+            font-weight: 800;
+        }
+        .btn-primary:hover {
+            background-color: #006973;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(0, 105, 115, 0.5);
+        }
+        .btn-secondary {
+            border: 2px solid #1b1c1c;
+            color: #1b1c1c;
+            transition: all 0.2s ease-in-out;
+            font-weight: 800;
+        }
+        .btn-secondary:hover {
+            background-color: #1b1c1c;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .btn-inverse {
+            background-color: #1b1c1c;
+            color: #ffffff;
+            transition: all 0.2s ease-in-out;
+            font-weight: 800;
+        }
+        .btn-inverse:hover {
+            background-color: #ffffff;
+            color: #1b1c1c;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<header class="fixed top-0 w-full z-[100] bg-background/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-page h-20">
+<div class="flex items-center gap-4">
+<img alt="Nikolay Nikolaev Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8quvWxOiHDj4gG7oo_r5ssPQ_hiaktqC9pN1jCGP6OOCQ0vx34rLaVcfXYS1PLKNbYtZ7GjdcT_5JLG7cVX8WvnhMvx4vZmt-T_R-YltWbQDQJxJtYIjD3FeEb2s1IRlIabRRL1DIW2pNwy8k4I4QQ1SzcNYyQKxjnCvpr9yPNJD6gFtehSD5JuurEahNq36NqAvUl9Gj9HBOORYyHM9WMUM1IMGheN-xuIdjsWSe5HmkBRnoTzg-hqr4tfnj_s-P8y9P3fXG1Glu"/>
+<span class="font-headline-md text-headline-md font-extrabold text-on-background hidden md:block">Nikolay Nikolaev</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors font-bold" href="#projects">Projects</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors font-bold" href="#stack">Stack</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors font-bold" href="#experience">Experience</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors font-bold" href="#contact">Contact</a>
+</nav>
+<div class="flex gap-4">
+<button class="hidden md:block btn-secondary px-6 py-2 rounded-DEFAULT font-label-caps text-label-caps uppercase">Download CV</button>
+<button class="btn-primary px-6 py-2 rounded-DEFAULT font-label-caps text-label-caps uppercase">Book Meeting</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="bg-surface-container-highest relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-primary-container transform origin-bottom-left -skew-x-12 translate-x-32 hidden lg:block opacity-20"></div>
+<div class="absolute -bottom-32 -left-32 w-96 h-96 bg-primary rounded-full blur-3xl opacity-10"></div>
+<div class="max-w-container-max mx-auto px-margin-page pt-32 pb-section-gap relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="flex flex-col justify-center items-start">
+<div class="flex items-center gap-3 mb-stack-lg bg-surface px-4 py-2 rounded-full border border-outline-variant shadow-sm">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">Available for new opportunities</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-background mb-stack-lg max-w-3xl">
+                            Architecting robust web experiences for technical leaders.
+                        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-xl text-xl">
+                            I specialize in building, maintaining, and extending high-performance marketing websites and web applications. Helping CTOs and Engineering Managers scale their digital presence with clean code and reliable infrastructure.
+                        </p>
+<div class="flex gap-4 mt-stack-md">
+<button class="btn-inverse px-8 py-4 rounded-DEFAULT font-label-caps text-label-caps uppercase tracking-wider">View Projects</button>
+</div>
+</div>
+<div class="hidden lg:flex justify-end items-center relative">
+<div class="w-4/5 aspect-square bg-gradient-to-tr from-primary to-primary-container rounded-2xl shadow-2xl transform rotate-3 flex items-center justify-center p-8 overflow-hidden relative">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
+<div class="font-code-snippet text-on-primary w-full max-h-full overflow-hidden text-sm opacity-80 leading-relaxed shadow-inner bg-on-background/10 p-6 rounded-lg">
+<pre><code>const Developer = {
+  name: 'Nikolay Nikolaev',
+  role: 'Software Architect',
+  skills: [
+    'React', 'Next.js', 
+    'PostgreSQL', 'AWS'
+  ],
+  mission: 'Scale your web presence',
+  execute: () =&gt; {
+    return buildRobustSolutions();
+  }
+};</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Worked With (Logos) -->
+<section class="border-y border-surface-container-high py-12 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-page">
+<p class="font-label-caps text-label-caps uppercase text-outline font-bold text-center mb-8 tracking-widest">Trusted by technical teams at</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<img alt="Modern tech company logo" class="h-10 w-auto transition-transform hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgUYzXDHl9hAeQ1raiS0kLZ9hfzs-t1ICl-12ksXApyDMKs6gGf2mzYcYp7UrOJ8WFWNnxx8U2JTd9EixJF_HkdO-_VEZFn2FPgkrzYVKIcERySI8UXQI1_pFgf71QBH1xqETGzHYHpRPBG_mWeggMRqy_JK_nZO_zT9RAvzVokmYKlGHdoPbgKggogThjXDlb3snBZpr2ghB2Fu2O1r32OQUllh-va9mK7oHqZdWplEI2D41EpaO6VQdl5fRhtngM1PRf7Fp8y0XC"/>
+<img alt="Abstract geometric corporate logo" class="h-10 w-auto transition-transform hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZVJT-mVbxcQDpLPWfngaJwkIbm9OdhjxVXoBrWEL29uTi2xEoonYljSo6NfuFNJ1o2p4a4dBLsdTLczEHGMW893LitDHC0OCYBRB0Og9Fn8Kf8vYqZX8R53dKqNQYZvhXD7BDC5ny2Cou99-bwD0AY5uRmQrkbXECR1TZQwMAHMt1OZxjK_Fg1vAtR1K5X7bYQxjsUT4yblFN3QKi49AbGWNTxoQDfQquOcF53ff8iEtmIrJD8nESRTO-nhT5H8bY07ImQK2aoX0C"/>
+<img alt="Clean minimal typography logo" class="h-10 w-auto transition-transform hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvJJinJ0imOMqwZ_NgmbFBQMxndPzZcRnB8rw0AAGjIwhRfRiGmaJNX64nMGic-RW-nh3D3UCiGAeA1j_q0wej8lvkPTlrakhrDUDnJI881V4_UGPZ3Ak2QUN_NXG3zp1ctCj-uJJ05e5rpgIvZT0IR5B3eQWGAMU8CPMbfMxq3TvKObnVg4qKs-mDhxIvto1wOwaIf8Hakqrl1lLX9QYzJOQMznVpgr3650x9lYe4VLjtlLsJVBWvoLSWWEWau9qJRFztp11nqc2Y"/>
+<img alt="Solid tech brand logo" class="h-10 w-auto transition-transform hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrrsHgrN1LrhtozWewhXlraxPAVd-piI0tHVEtFA_GyCS8LdHLqaNre5QuwOqoXuQKidtbjwA36QgVm7tD5ECh2AYjyNwpx5M2vyJnfLPKkF8SN25r5TFOQW4UFmJUeDlQgNsg5B1DZ_cchQ7Vwme4tdDMYbbt6FebImwrRn1XZyJd6YYvo0JrWNSHX3Ph4n-HvrQLm9_SVYTWEpnLa58WmqGd3mYjWOsDdr650teFHNMinvW7I6royEEKe-QGvH1v62TzqJQVFNBt"/>
+</div>
+</div>
+</section>
+<!-- Technologies Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-page" id="stack">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-4 pr-8">
+<div class="w-16 h-2 bg-primary-container mb-6"></div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-stack-md">Technical Arsenal</h2>
+<p class="font-body-md text-body-md text-on-surface-variant text-lg">Selected technologies utilized to deliver scalable, secure, and performant web solutions.</p>
+</div>
+<div class="lg:col-span-8 mt-12 lg:mt-0">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+<div class="flex items-center gap-4 p-6 border-2 border-surface-container-high hover:border-primary-container hover:shadow-lg transition-all duration-300 rounded-xl bg-surface-container-lowest group">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="font-body-md text-body-md text-on-background font-bold tracking-tight">React / Next.js</span>
+</div>
+<div class="flex items-center gap-4 p-6 border-2 border-surface-container-high hover:border-primary-container hover:shadow-lg transition-all duration-300 rounded-xl bg-surface-container-lowest group">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">database</span>
+<span class="font-body-md text-body-md text-on-background font-bold tracking-tight">PostgreSQL</span>
+</div>
+<div class="flex items-center gap-4 p-6 border-2 border-surface-container-high hover:border-primary-container hover:shadow-lg transition-all duration-300 rounded-xl bg-surface-container-lowest group">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">cloud</span>
+<span class="font-body-md text-body-md text-on-background font-bold tracking-tight">AWS / Cloudflare</span>
+</div>
+<div class="flex items-center gap-4 p-6 border-2 border-surface-container-high hover:border-primary-container hover:shadow-lg transition-all duration-300 rounded-xl bg-surface-container-lowest group">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">web</span>
+<span class="font-body-md text-body-md text-on-background font-bold tracking-tight">WordPress</span>
+</div>
+<div class="flex items-center gap-4 p-6 border-2 border-surface-container-high hover:border-primary-container hover:shadow-lg transition-all duration-300 rounded-xl bg-surface-container-lowest group">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">css</span>
+<span class="font-body-md text-body-md text-on-background font-bold tracking-tight">Tailwind CSS</span>
+</div>
+<div class="flex items-center gap-4 p-6 border-2 border-surface-container-high hover:border-primary-container hover:shadow-lg transition-all duration-300 rounded-xl bg-surface-container-lowest group">
+<span class="material-symbols-outlined text-3xl text-primary group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">api</span>
+<span class="font-body-md text-body-md text-on-background font-bold tracking-tight">REST / GraphQL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Showcases Section -->
+<section class="py-section-gap bg-on-background text-surface px-margin-page" id="projects">
+<div class="max-w-container-max mx-auto">
+<div class="mb-20 flex flex-col items-center text-center">
+<h2 class="font-headline-lg text-headline-lg text-surface mb-stack-sm">Featured Work</h2>
+<p class="font-body-md text-body-md text-surface-variant max-w-2xl text-lg">A selection of recent projects demonstrating architectural decisions and implementation quality.</p>
+</div>
+<div class="flex flex-col gap-24">
+<!-- Project Card 1 -->
+<div class="flex flex-col lg:flex-row gap-12 items-center group">
+<div class="w-full lg:w-3/5 h-96 lg:h-[500px] overflow-hidden rounded-2xl shadow-2xl relative">
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+<img alt="Enterprise Analytics Platform Dashboard" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtqQg2khc3Dv944lbE-2NHJIvt-JLjzoirpYz7O3Y3M4CGzHiM8lvuaEOEZI3Z4wMccJWTXqlxphzbThKadZ9QDzKjxaWqLftA8t7DMFAiox9pb2Mk7K71IC5Y31pIikcaCF4Gr1CK8D5EkCijMREh873M20ojVkgK2H_GGKyNFbRJuV9h9Xe3pfOQfM3S27Q6xIqWdXcMjY05f44XDc3P2rsLYCjl6JhxZD1ibilElYgiVQohdKYZoaVokrmg-k_iy6BVKgDDIAIM"/>
+</div>
+<div class="w-full lg:w-2/5 flex flex-col justify-center">
+<div class="flex gap-3 mb-6">
+<span class="font-code-snippet text-code-snippet bg-surface-variant/10 border border-surface-variant/20 px-4 py-1.5 rounded-full text-primary-fixed">Next.js</span>
+<span class="font-code-snippet text-code-snippet bg-surface-variant/10 border border-surface-variant/20 px-4 py-1.5 rounded-full text-primary-fixed">PostgreSQL</span>
+</div>
+<h3 class="font-headline-xl text-4xl font-extrabold text-surface mb-6">Enterprise Analytics Platform</h3>
+<p class="font-body-lg text-body-lg text-surface-variant mb-10 text-lg opacity-90 leading-relaxed">Migrated a legacy monolith to a decoupled architecture, improving data retrieval speeds by 40% and enhancing overall system resilience.</p>
+<a class="inline-flex items-center gap-3 font-label-caps text-label-caps uppercase text-primary-container hover:text-primary-fixed hover:gap-5 transition-all duration-300 tracking-widest" href="#">
+                                View Case Study <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="flex flex-col lg:flex-row-reverse gap-12 items-center group">
+<div class="w-full lg:w-3/5 h-96 lg:h-[500px] overflow-hidden rounded-2xl shadow-2xl relative">
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+<img alt="Global Marketing Hub Landing Page" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA2c1xfAciviFhZra6X_FrohyZC8IQ0PTwV-Q0IzZQ0lAEfow7ifri4Ozqb5QoajMOjd5wa2J_hynlJlBlHlVpH_JZdVXEqoExWIKG7AluEnJhHOlQUMTXOWJPqo_8hCiQcAN0Yju3LiE1WHK2iIxqeng5eaPfhaztaSWK6cvVIe2PxnkHCsotGx5RentvIr2tUCAn-341p7RJg5fdVThtJJWhdO4xWDucTm7kvnPkfAF9uBGGTgs_NkK8UUphpMyp6l8o5UMnfWfk"/>
+</div>
+<div class="w-full lg:w-2/5 flex flex-col justify-center">
+<div class="flex gap-3 mb-6">
+<span class="font-code-snippet text-code-snippet bg-surface-variant/10 border border-surface-variant/20 px-4 py-1.5 rounded-full text-primary-fixed">WordPress</span>
+<span class="font-code-snippet text-code-snippet bg-surface-variant/10 border border-surface-variant/20 px-4 py-1.5 rounded-full text-primary-fixed">AWS</span>
+</div>
+<h3 class="font-headline-xl text-4xl font-extrabold text-surface mb-6">Global Marketing Hub</h3>
+<p class="font-body-lg text-body-lg text-surface-variant mb-10 text-lg opacity-90 leading-relaxed">Developed a headless WordPress solution serving content to multiple regional frontends, ensuring high availability via Cloudflare edge caching.</p>
+<a class="inline-flex items-center gap-3 font-label-caps text-label-caps uppercase text-primary-container hover:text-primary-fixed hover:gap-5 transition-all duration-300 tracking-widest" href="#">
+                                View Case Study <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-page" id="contact">
+<div class="bg-primary-container border-4 border-primary p-12 md:p-24 rounded-3xl text-center max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
+<div class="absolute -top-40 -right-40 w-96 h-96 bg-primary rounded-full mix-blend-multiply opacity-20 blur-3xl"></div>
+<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-primary rounded-full mix-blend-multiply opacity-20 blur-3xl"></div>
+<div class="relative z-10">
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-primary-container mb-stack-md font-black">Ready to scale your web presence?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-12 max-w-2xl mx-auto text-xl opacity-90">
+                        Let's discuss your current infrastructure and how we can optimize it for performance, security, and growth.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+<button class="btn-inverse px-10 py-5 rounded-DEFAULT font-label-caps text-label-caps uppercase w-full sm:w-auto tracking-widest shadow-xl">Book a Meeting</button>
+<button class="bg-transparent border-2 border-on-primary-container text-on-primary-container hover:bg-on-primary-container hover:text-primary-container transition-all duration-300 font-bold px-10 py-5 rounded-DEFAULT font-label-caps text-label-caps uppercase w-full sm:w-auto tracking-widest">Download CV</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full mt-12 bg-surface border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-container-max mx-auto px-margin-page py-16">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md font-extrabold text-on-background">Nikolay Nikolaev</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Built for performance and precision. Minimalist architecture for maximum impact.</p>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80 mt-8">© 2024 Nikolay Nikolaev. Built for performance and precision.</p>
+</div>
+<div class="flex flex-col md:items-end gap-6">
+<div class="flex flex-col md:flex-row gap-6 md:gap-8">
+<a class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant hover:text-primary-container transition-colors duration-300 tracking-widest" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant hover:text-primary-container transition-colors duration-300 tracking-widest" href="#">GitHub</a>
+<a class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant hover:text-primary-container transition-colors duration-300 tracking-widest" href="#">Twitter</a>
+<a class="font-label-caps text-label-caps uppercase font-bold text-on-surface-variant hover:text-primary-container transition-colors duration-300 tracking-widest" href="#">Email</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

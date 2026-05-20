@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@theme {
+	/* Colors */
+	--color-on-tertiary-fixed-variant: #444748;
+	--color-inverse-on-surface: #f2f0f0;
+	--color-inverse-primary: #6dd5e4;
+	--color-surface-container-highest: #e4e2e2;
+	--color-surface: #fbf9f8;
+	--color-on-primary-fixed-variant: #004f57;
+	--color-error-container: #ffdad6;
+	--color-surface-container-high: #e9e8e7;
+	--color-surface-bright: #fbf9f8;
+	--color-on-background: #1b1c1c;
+	--color-on-secondary-container: #646464;
+	--color-on-error: #ffffff;
+	--color-outline: #6d797b;
+	--color-on-tertiary: #ffffff;
+	--color-inverse-surface: #303031;
+	--color-surface-tint: #006973;
+	--color-on-secondary-fixed-variant: #474747;
+	--color-surface-container-low: #f5f3f3;
+	--color-primary-fixed: #92f1ff;
+	--color-on-tertiary-container: #2c3030;
+	--color-secondary-fixed: #e2e2e2;
+	--color-primary: #006973;
+	--color-primary-container: #34a5b3;
+	--color-secondary-container: #e2e2e2;
+	--color-surface-variant: #e4e2e2;
+	--color-tertiary-fixed: #e1e3e3;
+	--color-tertiary: #5c5f5f;
+	--color-error: #ba1a1a;
+	--color-background: #fbf9f8;
+	--color-tertiary-fixed-dim: #c4c7c7;
+	--color-on-error-container: #93000a;
+	--color-on-secondary: #ffffff;
+	--color-outline-variant: #bdc9cb;
+	--color-on-primary: #ffffff;
+	--color-secondary-fixed-dim: #c6c6c6;
+	--color-secondary: #5e5e5e;
+	--color-on-surface-variant: #3d494b;
+	--color-on-primary-fixed: #001f23;
+	--color-on-primary-container: #00353b;
+	--color-on-primary-container-light: #fff;
+	--color-surface-container: #efeded;
+	--color-on-surface: #1b1c1c;
+	--color-surface-dim: #dbdad9;
+	--color-on-tertiary-fixed: #191c1d;
+	--color-on-secondary-fixed: #1b1b1b;
+	--color-tertiary-container: #949797;
+	--color-surface-container-lowest: #ffffff;
+	--color-primary-fixed-dim: #6dd5e4;
+
+	/* Border radius */
+	--radius: 0.125rem;
+	--radius-lg: 0.25rem;
+	--radius-xl: 0.5rem;
+	--radius-full: 0.75rem;
+
+	/* Spacing */
+	--spacing-margin-page: 64px;
+	--spacing-container-max: 1200px;
+	--spacing-stack-lg: 24px;
+	--spacing-gutter: 32px;
+	--spacing-stack-sm: 8px;
+	--spacing-stack-md: 16px;
+	--spacing-section-gap: 128px;
+
+	/* Container max-width */
+	--container-container-max: 1200px;
+
+	/* Font families */
+	--font-headline-md: "Manrope", sans-serif;
+	--font-headline-lg: "Manrope", sans-serif;
+	--font-headline-xl: "Manrope", sans-serif;
+	--font-headline-xl-mobile: "Manrope", sans-serif;
+	--font-body-md: "Inter", sans-serif;
+	--font-body-lg: "Inter", sans-serif;
+	--font-label-caps: "Inter", sans-serif;
+	--font-code-snippet: "JetBrains Mono", monospace;
+
+	/* Font sizes with line-height + weight + tracking */
+	--text-headline-md: 24px;
+	--text-headline-md--line-height: 1.3;
+	--text-headline-md--font-weight: 600;
+
+	--text-headline-lg: 40px;
+	--text-headline-lg--line-height: 1.15;
+	--text-headline-lg--letter-spacing: -0.02em;
+	--text-headline-lg--font-weight: 800;
+
+	--text-headline-xl: 64px;
+	--text-headline-xl--line-height: 1.05;
+	--text-headline-xl--letter-spacing: -0.03em;
+	--text-headline-xl--font-weight: 800;
+
+	--text-headline-xl-mobile: 42px;
+	--text-headline-xl-mobile--line-height: 1.1;
+	--text-headline-xl-mobile--font-weight: 800;
+
+	--text-body-md: 16px;
+	--text-body-md--line-height: 1.5;
+	--text-body-md--font-weight: 400;
+
+	--text-body-lg: 18px;
+	--text-body-lg--line-height: 1.6;
+	--text-body-lg--font-weight: 400;
+
+	--text-label-caps: 12px;
+	--text-label-caps--line-height: 1;
+	--text-label-caps--letter-spacing: 0.1em;
+	--text-label-caps--font-weight: 700;
+
+	--text-code-snippet: 14px;
+	--text-code-snippet--line-height: 1.5;
+	--text-code-snippet--font-weight: 400;
+}
+
+@layer components {
+	.btn-primary {
+		background-color: var(--color-primary-container);
+		color: var(--color-on-primary-container-light);
+		font-weight: 800;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.btn-primary:hover {
+		background-color: var(--color-primary);
+		color: var(--color-on-primary);
+		transform: translateY(-2px);
+		box-shadow: 0 10px 20px -10px rgba(0, 105, 115, 0.5);
+	}
+
+	.btn-secondary {
+		border: 2px solid var(--color-on-background);
+		color: var(--color-on-background);
+		font-weight: 800;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.btn-secondary:hover {
+		background-color: var(--color-on-background);
+		color: var(--color-surface);
+		transform: translateY(-2px);
+	}
+
+	.btn-inverse {
+		background-color: var(--color-on-background);
+		color: var(--color-surface);
+		font-weight: 800;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.btn-inverse:hover {
+		background-color: var(--color-surface);
+		color: var(--color-on-background);
+		transform: translateY(-2px);
+	}
+}
