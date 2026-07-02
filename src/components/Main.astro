@@ -1,4 +1,7 @@
 ---
+import type { Project } from "../types/project";
+import ProjectsSlider from "./projects/ProjectsSlider.astro";
+
 interface NavItem {
 	label: string;
 	href: string;
@@ -14,16 +17,6 @@ interface Technology {
 	icon: string;
 }
 
-interface Project {
-	title: string;
-	description: string;
-	imageSrc: string;
-	imageAlt: string;
-	tags: string[];
-	href: string;
-	reverse?: boolean;
-}
-
 interface SocialLink {
 	label: string;
 	href: string;
@@ -33,89 +26,122 @@ interface CtaAction {
 	label: string;
 	href: string;
 	variant: "primary" | "secondary";
+	target: "_blank" | "_self";
 }
 
 const navItems: NavItem[] = [
-	{ label: "Projects", href: "#projects" },
-	{ label: "Stack", href: "#stack" },
-	{ label: "Contact", href: "#contact" },
+	{ label: "Partners", href: "#partners" },
+	{ label: "Tech", href: "#stack" },
+	{ label: "Case Studies", href: "#projects" },
 ];
 
 const partnerLogos: PartnerLogo[] = [
 	{
-		src: "img/fs-logo.webp",
-		alt: "Fantastic Services Logo",
+		src: "/img/logos/yotpo-logo.svg",
+		alt: "Yotpo Logo",
 	},
 	{
-		src: "img/sensity-logo.webp",
+		src: "/img/logos/sensity-logo.webp",
 		alt: "Sensity Logo",
 	},
 	{
-		src: "img/upc-logo.webp",
+		src: "/img/logos/upc-logo.webp",
 		alt: "Ultimate Poker Coaching Logo",
 	},
 	{
-		src: "img/blubito-logo.webp",
+		src: "/img/logos/blubito-logo.webp",
 		alt: "Blubito Logo",
 	},
 	{
-		src: "img/yotpo-logo.svg",
-		alt: "Yotpo Logo",
+		src: "/img/logos/fs-logo.webp",
+		alt: "Fantastic Services Logo",
 	}
 ];
 
 const technologies: Technology[] = [
-	{ label: "React / Next.js", icon: "terminal" },
-	{ label: "PostgreSQL", icon: "database" },
-	{ label: "AWS / Cloudflare", icon: "cloud" },
-	{ label: "WordPress", icon: "web" },
-	{ label: "Tailwind CSS", icon: "css" },
-	{ label: "REST / GraphQL", icon: "api" },
+	{ label: "WordPress / Shopify", icon: "web" },
+	{ label: "PostgreSQL / MySQL", icon: "database" },
+	{ label: "AWS / Google / Cloudflare", icon: "cloud" },
+	{ label: "AI Integrations / Agentic AI", icon: "robot" },
+	{ label: "SEO / GEO", icon: "search" },
+	{ label: "A/B Testing / Analytics", icon: "analytics" },
 ];
 
 const projects: Project[] = [
 	{
-		title: "Enterprise Analytics Platform",
+		title: "Yotpo",
+		innerTitle: "Scaling the Marketing Engine for an Enterprise Giant",
 		description:
-			"Migrated a legacy monolith to a decoupled architecture, improving data retrieval speeds by 40% and enhancing overall system resilience.",
+			"Engineered a highly flexible, custom block-based page builder and integrated AI agentic workflows for a high-traffic enterprise marketing website. Fortified the infrastructure with advanced AWS caching and security protocols. This accelerated content deployment and eliminated technical bottlenecks, allowing the marketing team to execute campaigns autonomously.",
+		mainContent:
+			"<ul><li><strong>The Challenge:</strong> A high-traffic, enterprise-level marketing website (yotpo.com) requires rapid content iteration, flawless performance under heavy load, and robust tracking to drive marketing campaigns and conversions. <li><strong>The Solution:</strong> I architected and maintained a custom, highly flexible Gutenberg block-based page builder, empowering the marketing team to build pages autonomously. To accelerate production, I integrated cutting-edge AI agentic workflows for front-end development and content management. The infrastructure is heavily fortified using AWS for advanced caching, migration, and security. <li><strong>The Tech Stack:</strong> WordPress, AWS, Custom Gutenberg Blocks, AI Workflows, A/B Testing & Advanced Analytics. <li><strong>The Impact:</strong> Eliminated technical bottlenecks for the marketing team, enabling them to launch, test, and optimize high-converting campaigns rapidly while easily handling massive, enterprise-level web traffic without performance drops.</li></ul>",
 		imageSrc:
-			"https://lh3.googleusercontent.com/aida-public/AB6AXuAtqQg2khc3Dv944lbE-2NHJIvt-JLjzoirpYz7O3Y3M4CGzHiM8lvuaEOEZI3Z4wMccJWTXqlxphzbThKadZ9QDzKjxaWqLftA8t7DMFAiox9pb2Mk7K71IC5Y31pIikcaCF4Gr1CK8D5EkCijMREh873M20ojVkgK2H_GGKyNFbRJuV9h9Xe3pfOQfM3S27Q6xIqWdXcMjY05f44XDc3P2rsLYCjl6JhxZD1ibilElYgiVQohdKYZoaVokrmg-k_iy6BVKgDDIAIM",
-		imageAlt: "Enterprise Analytics Platform Dashboard",
-		tags: ["Next.js", "PostgreSQL"],
-		href: "#",
+			"/img/projects/yotpo-desktop.webp",
+		imageAlt: "Yotpo",
+		tags: ["WordPress", "AWS"],
+		href: "https://yotpo.com/",
 	},
 	{
-		title: "Global Marketing Hub",
+		title: "Ultimate Poker Coaching",
+		innerTitle: "A Frictionless Marketplace & Scheduling Platform",
+		mainContent:
+			"<ul><li><strong>The Challenge:</strong> The client required a centralized, all-in-one platform to seamlessly connect poker coaches with students, needing to handle everything from user discovery to secure payments and calendar management without bottlenecks. <li><strong>The Solution:</strong> I engineered a custom, multi-functional WordPress platform designed to automate the entire coaching lifecycle. I integrated Stripe for secure, automated payment processing and built robust scheduling features that allow coaches to manage their availability effortlessly. The infrastructure was routed through Cloudflare to guarantee fast global delivery and enterprise-grade security. <li><strong>The Tech Stack:</strong> Custom WordPress, Stripe API Integration, Cloudflare, Complex Scheduling Architecture. <li><strong>The Impact:</strong> Created a seamless end-to-end user experience that eliminated administrative friction, empowering coaches to easily monetize their skills and allowing the business to scale its user base and revenue efficiently.</li></ul>",
 		description:
-			"Developed a headless WordPress solution serving content to multiple regional frontends, ensuring high availability via Cloudflare edge caching.",
+			"Architected a custom, multi-functional marketplace platform to seamlessly connect coaches with students and manage the entire coaching lifecycle. Integrated automated Stripe payment processing and robust calendar scheduling within a secure, Cloudflare-backed infrastructure. This created a frictionless user experience that empowered coaches to effortlessly monetize their skills and scale revenue.",
 		imageSrc:
-			"https://lh3.googleusercontent.com/aida-public/AB6AXuCA2c1xfAciviFhZra6X_FrohyZC8IQ0PTwV-Q0IzZQ0lAEfow7ifri4Ozqb5QoajMOjd5wa2J_hynlJlBlHlVpH_JZdVXEqoExWIKG7AluEnJhHOlQUMTXOWJPqo_8hCiQcAN0Yju3LiE1WHK2iIxqeng5eaPfhaztaSWK6cvVIe2PxnkHCsotGx5RentvIr2tUCAn-341p7RJg5fdVThtJJWhdO4xWDucTm7kvnPkfAF9uBGGTgs_NkK8UUphpMyp6l8o5UMnfWfk",
-		imageAlt: "Global Marketing Hub Landing Page",
-		tags: ["WordPress", "AWS"],
-		href: "#",
+			"/img/projects/ultimatepokercoaching-desktop.webp",
+		imageAlt: "Ultimate Poker Coaching",
+		tags: ["WordPress", "Cloudflare", "Stripe"],
+		href: "https://ultimatepokercoaching.com/",
 		reverse: true,
 	},
+	{
+		title: "Sensity AI",
+		innerTitle: "A High-Performance Multilingual Hub for Cutting-Edge AI Security",
+		mainContent: "<ul><li><strong>The Challenge:</strong> A sophisticated AI security company needed a powerful digital presence to showcase their \"forensic-grade deepfake detection hub\". The site had to communicate complex technical concepts globally, rank highly in search engines, and be easily scalable by their internal marketing team. <li><strong>The Solution:</strong> I built a blazing-fast, multilingual marketing website specifically optimized for performance and global SEO. The architecture was designed to flawlessly present custom, high-fidelity visuals of their deepfake investigations while providing an intuitive, flexible backend for the marketing team to rapidly deploy new content and campaigns. <li><strong>The Tech Stack:</strong> High-Performance Web Development, Multilingual Architecture, Technical SEO Optimization, Custom Visual Integrations. <li><strong>The Impact:</strong> Delivered a globally accessible, lightning-fast digital asset that ranks competitively in search engines and provides the marketing team with total autonomy to scale their content and drive lead generation without relying on constant developer support.</li></ul>",
+		description:
+			"Built a high-performance, multilingual digital hub designed to showcase forensic-grade AI security investigations globally. Optimized the technical architecture for top-tier SEO, custom high-fidelity visual delivery, and rapid content scaling. This provided the marketing team with a blazing-fast, autonomous asset to drive global lead generation.",
+		imageSrc:
+			"/img/projects/sensity-desktop.webp",
+		imageAlt: "Sensity AI",
+		tags: ["WordPress"],
+		href: "https://sensity.ai/",
+	},
+	{
+		title: "Hermes Plugin",
+		innerTitle: "Centralizing Infrastructure for High-Traffic iGaming Media",
+		mainContent: "<ul><li><strong>The Challenge:</strong> Managing and scaling functionality across multiple high-traffic media websites (attracting millions of monthly visitors) in the fiercely competitive iGaming industry. <li><strong>The Solution:</strong> Maintained, optimized, and significantly extended a centralized custom WordPress plugin (Hermes) that powers multiple company domains. I developed tailored Gutenberg blocks for rapid content deployment, integrated complex third-party APIs, and engineered custom usage-tracking solutions. <li><strong>The Tech Stack:</strong> WordPress Plugin Development, PHP, Third-Party API Integration, Gutenberg, Web Performance Optimization. <li><strong>The Impact:</strong> Delivered lightning-fast loading times and seamless user experiences for millions of users, while drastically reducing the operational overhead for content teams by centralizing multi-site management into a single powerful plugin.</li></ul>",
+		description:
+			"Maintained and significantly extended a centralized custom WordPress plugin that powers multiple high-traffic media domains in the competitive iGaming sector. Developed tailored Gutenberg blocks and complex API integrations to streamline multi-site content management. This drastically reduced operational overhead while ensuring lightning-fast performance for millions of monthly visitors.",
+		imageSrc:
+			"/img/projects/onthedotmedia-desktop.png",
+		imageAlt: "",
+		tags: ["WordPress", "Google Cloud"],
+		href: "#",
+		reverse: true,
+	}
 ];
 
 const socialLinks: SocialLink[] = [
 	{ label: "LinkedIn", href: "https://www.linkedin.com/in/nikolay-nikolaev-78992268/" },
 	{ label: "GitHub", href: "https://github.com/nnikolaev12" },
-	{ label: "Email", href: "mailto:me@nickolaynikolaev.com" },
+	{ label: "Email", href: "mailto:me@nikolaynikolaev.com" },
 ];
 
 const ctaActions: CtaAction[] = [
-	{ label: "Book a Meeting", href: "https://calendly.com/nicknickolaev/first-30min", variant: "primary" },
-	{ label: "Download CV", href: "docs/Resume.pdf", variant: "secondary" },
+	{ label: "Book a Meeting", href: "https://calendar.app.google/cKy7EK93wS6esepB6", variant: "primary", target: "_blank" },
+	{ label: "Email Me", href: "mailto:me@nikolaynikolaev.com", variant: "secondary", target: "_self" },
 ];
 
-const heroCodeSnippet = `const Developer = {
+const heroCodeSnippet = `const Engineer = {
   name: 'Nick',
-  role: 'Web Developer',
+  role: 'Full Stack Web Engineer',
   skills: [
-    'PHP', 'Python', 'SQL',
-	'HTML/CSS', 'JavaScript'
+    'Software Engineering',
+	'Infrastructure', 'SEO/GEO',
+	'AI Integration',
   ],
-  mission: 'Web presence at scale',
+  mission: 'Engineered for Growth',
   execute: () => {
     return buildRobustSolutions();
   }
@@ -134,7 +160,7 @@ const currentYear = new Date().getFullYear();
 			<img
 				alt="Nikolay Nikolaev Logo"
 				class="h-10 w-auto"
-				src="/img/nn-logo-transp.webp"
+				src="/img/logos/nn-logo-transp.webp"
 				width="40"
 				height="40"
 				loading="eager"
@@ -150,7 +176,7 @@ const currentYear = new Date().getFullYear();
 			{
 				navItems.map((item) => (
 					<a
-						class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors font-bold"
+						class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors font-bold go-to-section"
 						href={item.href}
 					>
 						{item.label}
@@ -166,10 +192,11 @@ const currentYear = new Date().getFullYear();
 				Download CV
 			</a> -->
 			<a
+				id="bookButton"
 				href="#contact"
-				class="btn-primary inline-flex items-center px-6 py-2 rounded font-label-caps text-label-caps uppercase"
+				class="btn-primary inline-flex items-center px-6 py-2 rounded font-label-caps text-label-caps uppercase go-to-section"
 			>
-				Book Meeting
+				Let's Talk
 			</a>
 		</div>
 	</div>
@@ -211,22 +238,19 @@ const currentYear = new Date().getFullYear();
 					<h1
 						class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-background mb-stack-lg max-w-3xl"
 					>
-						Architecting robust web solutions for tech leaders
+						Engineered for Growth
 					</h1>
 					<p
 						class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-xl text-xl"
 					>
-						I specialize in building, maintaining, and extending
-						high-performance marketing websites and web applications. Helping
-						CTOs and Engineering Managers scale their digital presence with
-						clean code and reliable infrastructure.
+						Empowering marketing teams and tech leaders with seamless technical setups, lightning-fast web applications, and reliable infrastructure. I take the technical heavy lifting off your plate so you can focus on driving traffic and scaling revenue.
 					</p>
 					<div class="flex gap-4 mt-stack-md">
 						<a
 							href="#projects"
-							class="btn-inverse inline-flex items-center px-8 py-4 rounded font-label-caps text-label-caps uppercase tracking-wider"
+							class="go-to-section btn-inverse inline-flex items-center px-8 py-4 rounded font-label-caps text-label-caps uppercase tracking-wider"
 						>
-							View Projects
+							Case Studies
 						</a>
 					</div>
 				</div>
@@ -251,14 +275,15 @@ const currentYear = new Date().getFullYear();
 
 	<!-- Trusted by -->
 	<section
-		class="border-y border-surface-container-high py-12 bg-surface-container-lowest"
+		id="partners"
+		class="border-y border-surface-container-high py-section-gap bg-surface-container-lowest"
 		aria-label="Trusted by"
 	>
 		<div class="max-w-container-max mx-auto px-margin-page">
 			<p
 				class="font-label-caps text-label-caps uppercase text-outline font-bold text-center mb-8 tracking-widest"
 			>
-				Trusted by technical teams at
+				Trusted by tech leaders at
 			</p>
 			<div
 				class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-70 grayscale hover:grayscale-0 transition-all duration-500"
@@ -289,7 +314,7 @@ const currentYear = new Date().getFullYear();
 				<h2
 					class="font-headline-lg text-headline-lg text-on-background mb-stack-md"
 				>
-					Technical Arsenal
+					Technical Expertise
 				</h2>
 				<p
 					class="font-body-md text-body-md text-on-surface-variant text-lg"
@@ -331,65 +356,16 @@ const currentYear = new Date().getFullYear();
 				<h2
 					class="font-headline-lg text-headline-lg text-surface mb-stack-sm"
 				>
-					Featured Work
+					Real-World Implementations
 				</h2>
 				<p
 					class="font-body-md text-body-md text-surface-variant max-w-2xl text-lg"
 				>
-					A selection of recent projects demonstrating architectural decisions
-					and implementation quality.
+					Showcasing real-world implementations of technical solutions that have driven measurable business results.
 				</p>
 			</div>
-			<div class="flex flex-col gap-24">
-				{
-					projects.map((project) => (
-						<article
-							class:list={[
-								"flex flex-col gap-12 items-center group",
-								project.reverse ? "lg:flex-row-reverse" : "lg:flex-row",
-							]}
-						>
-							<div class="w-full lg:w-3/5 h-96 lg:h-[500px] overflow-hidden rounded-2xl shadow-2xl relative">
-								<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-								<img
-									alt={project.imageAlt}
-									src={project.imageSrc}
-									class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-									loading="lazy"
-									decoding="async"
-								/>
-							</div>
-							<div class="w-full lg:w-2/5 flex flex-col justify-center">
-								<div class="flex gap-3 mb-6">
-									{project.tags.map((tag) => (
-										<span class="font-code-snippet text-code-snippet bg-surface-variant/10 border border-surface-variant/20 px-4 py-1.5 rounded-full text-primary-fixed">
-											{tag}
-										</span>
-									))}
-								</div>
-								<h3 class="font-headline-xl text-4xl font-extrabold text-surface mb-6">
-									{project.title}
-								</h3>
-								<p class="font-body-lg text-body-lg text-surface-variant mb-10 text-lg opacity-90 leading-relaxed">
-									{project.description}
-								</p>
-								<a
-									class="inline-flex items-center gap-3 font-label-caps text-label-caps uppercase text-primary-container hover:text-primary-fixed hover:gap-5 transition-all duration-300 tracking-widest"
-									href={project.href}
-								>
-									View Case Study
-									<span
-										class="material-symbols-outlined text-xl"
-										aria-hidden="true"
-									>
-										arrow_forward
-									</span>
-								</a>
-							</div>
-						</article>
-					))
-				}
-			</div>
+
+			<ProjectsSlider projects={projects} />
 		</div>
 	</section>
 
@@ -404,13 +380,12 @@ const currentYear = new Date().getFullYear();
 			<h2
 				class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-background mb-stack-md"
 			>
-				Ready to scale your web presence?
+				Free Consultation
 			</h2>
 			<p
 				class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto"
 			>
-				Let's discuss your current infrastructure and how we can optimize it
-				for performance, security, and growth.
+				Book a 30-minute, zero-pressure strategy call. There is no sales pitch. We will look under the hood of your current technical setup and identify bottlenecks. You will walk away with actionable advice and clear recommendations to scale your web presence—whether we decide to work together or not.
 			</p>
 			<div
 				class="flex flex-col sm:flex-row justify-center items-center gap-6"
@@ -425,6 +400,7 @@ const currentYear = new Date().getFullYear();
 									? "btn-primary"
 									: "btn-secondary",
 							]}
+							target={action.target}
 						>
 							{action.label}
 						</a>
@@ -443,18 +419,17 @@ const currentYear = new Date().getFullYear();
 			<span
 				class="font-headline-md text-headline-md font-extrabold text-on-background"
 			>
-				Nikolay Nikolaev
+				Nick Nikolaev
 			</span>
 			<p
 				class="font-body-md text-body-md text-on-surface-variant max-w-sm"
 			>
-				Built for performance and precision. Minimalist architecture for
-				maximum impact.
+				Empowering marketing teams and tech leaders with seamless technical setups, lightning-fast web applications, and reliable infrastructure.
 			</p>
 			<p
 				class="font-body-md text-body-md text-on-surface-variant opacity-80 mt-8"
 			>
-				© {currentYear} Nikolay Nikolaev. Built for performance and precision.
+				© {currentYear} Nikolay Nikolaev. Full Stack Engineer.
 			</p>
 		</div>
 		<nav
@@ -476,3 +451,7 @@ const currentYear = new Date().getFullYear();
 		</nav>
 	</div>
 </footer>
+
+<script>
+	import "./main";
+</script>

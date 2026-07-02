@@ -1,0 +1,219 @@
+---
+import type { Project } from "../../types/project";
+import ProjectSlide from "./ProjectSlide.astro";
+
+interface Props {
+	projects: Project[];
+	ariaLabel?: string;
+}
+
+const { projects, ariaLabel = "Featured projects" } = Astro.props;
+---
+
+<projects-slider
+	class="projects-slider"
+	tabindex="0"
+	role="region"
+	aria-roledescription="carousel"
+	aria-label={ariaLabel}
+>
+	<ol class="projects-slider__list" data-slider-list>
+		{
+			projects.map((project, index) => (
+				<li
+					class="projects-slider__slide"
+					data-slider-slide
+					role="group"
+					aria-roledescription="slide"
+					aria-label={`${project.title} — ${index + 1} of ${projects.length}`}
+				>
+					<ProjectSlide project={project} />
+				</li>
+			))
+		}
+	</ol>
+
+	<div class="projects-slider__controls">
+		<button
+			type="button"
+			class="projects-slider__nav"
+			data-slider-prev
+			aria-label="Previous project"
+		>
+			<span class="material-symbols-outlined" aria-hidden="true">
+				arrow_back
+			</span>
+		</button>
+
+		<div
+			class="projects-slider__dots"
+			aria-label="Choose a project"
+			role="group"
+		>
+			{
+				projects.map((project, index) => (
+					<button
+						type="button"
+						class="projects-slider__dot"
+						data-slider-dot
+						aria-label={`Go to ${project.title} (${index + 1} of ${projects.length})`}
+					/>
+				))
+			}
+		</div>
+
+		<button
+			type="button"
+			class="projects-slider__nav"
+			data-slider-next
+			aria-label="Next project"
+		>
+			<span class="material-symbols-outlined" aria-hidden="true">
+				arrow_forward
+			</span>
+		</button>
+	</div>
+</projects-slider>
+
+<style>
+	.projects-slider {
+		display: block;
+		outline: none;
+	}
+
+	.projects-slider:focus-visible {
+		outline: 2px solid var(--color-primary-container);
+		outline-offset: 4px;
+		border-radius: 1rem;
+	}
+
+	.projects-slider__list {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		gap: 2rem;
+		overflow-x: auto;
+		overscroll-behavior-x: contain;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.projects-slider__list::-webkit-scrollbar {
+		display: none;
+	}
+
+	.projects-slider__slide {
+		flex: 0 0 100%;
+		min-width: 0;
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+		padding: 0.25rem 0;
+	}
+
+	.projects-slider__controls {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.25rem;
+		margin-top: 3rem;
+	}
+
+	.projects-slider__nav {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 9999px;
+		border: 1px solid color-mix(in srgb, var(--color-surface) 30%, transparent);
+		background: transparent;
+		color: var(--color-surface);
+		cursor: pointer;
+		transition:
+			background-color 0.2s ease,
+			border-color 0.2s ease,
+			transform 0.2s ease,
+			opacity 0.2s ease;
+	}
+
+	.projects-slider__nav:hover:not(:disabled) {
+		background: var(--color-primary-container);
+		border-color: var(--color-primary-container);
+		color: var(--color-on-primary-container);
+		transform: translateY(-2px);
+	}
+
+	.projects-slider__nav:focus-visible {
+		outline: 2px solid var(--color-primary-container);
+		outline-offset: 3px;
+	}
+
+	.projects-slider__nav:disabled {
+		opacity: 0.35;
+		cursor: not-allowed;
+	}
+
+	.projects-slider__dots {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.projects-slider__dot {
+		appearance: none;
+		border: none;
+		padding: 0;
+		width: 0.6rem;
+		height: 0.6rem;
+		border-radius: 9999px;
+		background: color-mix(in srgb, var(--color-surface) 30%, transparent);
+		cursor: pointer;
+		transition:
+			width 0.25s ease,
+			background-color 0.2s ease;
+	}
+
+	.projects-slider__dot:hover {
+		background: color-mix(in srgb, var(--color-surface) 55%, transparent);
+	}
+
+	.projects-slider__dot:focus-visible {
+		outline: 2px solid var(--color-primary-container);
+		outline-offset: 3px;
+	}
+
+	.projects-slider__dot[aria-current="true"] {
+		width: 1.75rem;
+		background: var(--color-primary-container);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.projects-slider__list {
+			scroll-behavior: auto;
+		}
+
+		.projects-slider__nav,
+		.projects-slider__dot {
+			transition: none;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.projects-slider__controls {
+			gap: 0.75rem;
+		}
+
+		.projects-slider__nav {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+	}
+</style>
+
+<script>
+	import "./projects-slider";
+</script>

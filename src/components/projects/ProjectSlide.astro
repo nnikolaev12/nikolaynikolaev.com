@@ -1,0 +1,202 @@
+---
+import type { Project } from "../../types/project";
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+
+const slug = project.title
+	.toLowerCase()
+	.replace(/[^a-z0-9]+/g, "-")
+	.replace(/^-|-$/g, "");
+const dialogId = `project-dialog-${slug}`;
+const hasHref = project.href !== "#";
+---
+
+<article
+	class:list={[
+		"flex flex-col gap-12 items-center group w-full",
+		project.reverse ? "lg:flex-row-reverse" : "lg:flex-row",
+	]}
+>
+	<div
+		class="w-full lg:w-3/5 h-96 lg:h-[380px] overflow-hidden rounded-2xl shadow-2xl relative"
+	>
+		<div
+			class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10"
+		>
+		</div>
+		<img
+			alt={project.imageAlt}
+			src={project.imageSrc}
+			class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+			loading="lazy"
+			decoding="async"
+			draggable="false"
+		/>
+	</div>
+	<div class="w-full lg:w-2/5 flex flex-col justify-center">
+		<div class="flex gap-3 mb-6 flex-wrap">
+			{
+				project.tags.map((tag) => (
+					<span class="font-code-snippet text-code-snippet bg-surface-variant/10 border border-surface-variant/20 px-4 py-1.5 rounded-full text-primary-fixed">
+						{tag}
+					</span>
+				))
+			}
+		</div>
+		<h3
+			class="font-headline-xl text-3xl md:text-4xl font-extrabold text-surface mb-6"
+		>
+			{project.title}
+		</h3>
+		<p
+			class="font-body-lg text-body-lg text-surface-variant mb-10 text-lg opacity-90 leading-relaxed"
+		>
+			{project.description}
+		</p>
+		<button
+			type="button"
+			class="self-start inline-flex items-center gap-3 font-label-caps text-label-caps uppercase text-primary-container hover:text-primary-fixed hover:gap-5 transition-all duration-300 tracking-widest cursor-pointer"
+			data-dialog-open={dialogId}
+			aria-haspopup="dialog"
+		>
+			View Case Study
+			<span class="material-symbols-outlined text-xl" aria-hidden="true">
+				arrow_forward
+			</span>
+		</button>
+	</div>
+</article>
+
+<dialog
+	id={dialogId}
+	data-project-dialog
+	class="project-dialog"
+	aria-labelledby={`${dialogId}-title`}
+>
+	<div
+		class="relative flex flex-col gap-6 bg-surface-container-lowest text-on-background rounded-2xl shadow-2xl p-8 md:p-12"
+	>
+		<button
+			type="button"
+			class="absolute top-4 right-4 inline-flex items-center justify-center w-10 h-10 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-background transition-colors cursor-pointer"
+			data-dialog-close
+			aria-label="Close dialog"
+		>
+			<span class="material-symbols-outlined" aria-hidden="true">close</span>
+		</button>
+
+		<div class="flex gap-3 flex-wrap pr-12">
+			{
+				project.tags.map((tag) => (
+					<span class="font-code-snippet text-code-snippet bg-primary-container/10 border border-primary-container/20 px-4 py-1.5 rounded-full text-primary">
+						{tag}
+					</span>
+				))
+			}
+		</div>
+
+		<h3
+			id={`${dialogId}-title`}
+			class="font-headline-lg text-2xl md:text-3xl font-extrabold text-on-background pr-12"
+		>
+			{project.innerTitle}
+		</h3>
+
+		<div
+			class="project-dialog__content font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+			set:html={project.mainContent}
+		/>
+
+		{
+			hasHref && (
+				<a
+					class="self-start inline-flex items-center gap-3 font-label-caps text-label-caps uppercase text-primary-container hover:text-primary hover:gap-5 transition-all duration-300 tracking-widest"
+					href={project.href}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Visit Live Site
+					<span class="material-symbols-outlined text-xl" aria-hidden="true">
+						open_in_new
+					</span>
+				</a>
+			)
+		}
+	</div>
+</dialog>
+
+<style>
+	.project-dialog {
+		width: min(90vw, 720px);
+		max-height: 85vh;
+		margin: auto;
+		padding: 0;
+		border: none;
+		background: transparent;
+		overflow: visible;
+	}
+
+	.project-dialog__content :global(ul) {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.project-dialog__content :global(li) {
+		padding-left: 1.25rem;
+		position: relative;
+	}
+
+	.project-dialog__content :global(li)::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0.65em;
+		width: 0.4rem;
+		height: 0.4rem;
+		border-radius: 9999px;
+		background: var(--color-primary-container);
+	}
+
+	.project-dialog::backdrop {
+		background: color-mix(in srgb, var(--color-on-background) 70%, transparent);
+		backdrop-filter: blur(4px);
+	}
+
+	.project-dialog > div {
+		max-height: 85vh;
+		overflow-y: auto;
+	}
+
+	.project-dialog[open] {
+		animation: project-dialog-in 0.25s ease;
+	}
+
+	@keyframes project-dialog-in {
+		from {
+			opacity: 0;
+			transform: translateY(12px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.project-dialog[open] {
+			animation: none;
+		}
+	}
+</style>
+
+<script>
+	import "./project-dialog";
+</script>
