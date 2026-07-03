@@ -286,19 +286,22 @@ const currentYear = new Date().getFullYear();
 				Trusted by tech leaders at
 			</p>
 			<div
-				class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-70 grayscale hover:grayscale-0 transition-all duration-500"
+				class="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
 			>
-				{
-					partnerLogos.map((logo) => (
-						<img
-							alt={logo.alt}
-							src={logo.src}
-							class="h-10 w-auto transition-transform hover:scale-105"
-							loading="lazy"
-							decoding="async"
-						/>
-					))
-				}
+				<div class="logo-marquee">
+					{
+						[...partnerLogos, ...partnerLogos].map((logo, index) => (
+							<img
+								alt={index < partnerLogos.length ? logo.alt : ""}
+								aria-hidden={index >= partnerLogos.length}
+								src={logo.src}
+								class="h-10 w-auto shrink-0 grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100 hover:scale-110"
+								loading="lazy"
+								decoding="async"
+							/>
+						))
+					}
+				</div>
 			</div>
 		</div>
 	</section>

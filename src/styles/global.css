@@ -160,4 +160,41 @@
 	strong {
 		color: var(--color-primary-container);
 	}
+
+	.logo-marquee {
+		--gap: 3rem;
+		display: flex;
+		width: max-content;
+		flex-shrink: 0;
+		align-items: center;
+		gap: var(--gap);
+		animation: logo-scroll 30s linear infinite;
+	}
+
+	@media (min-width: 768px) {
+		.logo-marquee {
+			--gap: 6rem;
+		}
+	}
+
+	.logo-marquee:hover {
+		animation-play-state: paused;
+	}
+}
+
+@keyframes logo-scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-50% - var(--gap) / 2));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.logo-marquee {
+		animation: none;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }
