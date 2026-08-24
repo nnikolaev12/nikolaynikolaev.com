@@ -38,8 +38,8 @@ interface CtaAction {
 }
 
 const navItems: NavItem[] = [
-	{ label: "Partners", href: "#partners" },
-	{ label: "Tech", href: "#stack" },
+	{ label: "Clients", href: "#clients" },
+	{ label: "How I ship", href: "#stack" },
 	{ label: "Case Studies", href: "#projects" },
 ];
 
@@ -101,7 +101,7 @@ const stackDomains: StackDomain[] = [
 			"Search, generative-engine visibility, and experimentation wired into the stack.",
 		chips: [
 			{ label: "SEO", icon: "search" },
-			{ label: "GEO", icon: "public" },
+			{ label: "GEO / AI search", icon: "public" },
 			{ label: "A/B testing", icon: "science" },
 			{ label: "Analytics", icon: "analytics" },
 		],
@@ -111,56 +111,70 @@ const stackDomains: StackDomain[] = [
 const projects: Project[] = [
 	{
 		title: "Yotpo",
-		innerTitle: "Scaling the Marketing Engine for an Enterprise Giant",
+		innerTitle: "A marketing site the team can actually ship on",
 		description:
-			"Engineered a highly flexible, custom block-based page builder and integrated AI agentic workflows for a high-traffic enterprise marketing website. Fortified the infrastructure with advanced AWS caching and security protocols. This accelerated content deployment and eliminated technical bottlenecks, allowing the marketing team to execute campaigns autonomously.",
-		mainContent:
-			"<ul><li><strong>The Challenge:</strong> A high-traffic, enterprise-level marketing website (yotpo.com) requires rapid content iteration, flawless performance under heavy load, and robust tracking to drive marketing campaigns and conversions. <li><strong>The Solution:</strong> I architected and maintained a custom, highly flexible Gutenberg block-based page builder, empowering the marketing team to build pages autonomously. To accelerate production, I integrated cutting-edge AI agentic workflows for front-end development and content management. The infrastructure is heavily fortified using AWS for advanced caching, migration, and security. <li><strong>The Tech Stack:</strong> WordPress, AWS, Custom Gutenberg Blocks, AI Workflows, A/B Testing & Advanced Analytics. <li><strong>The Impact:</strong> Eliminated technical bottlenecks for the marketing team, enabling them to launch, test, and optimize high-converting campaigns rapidly while easily handling massive, enterprise-level web traffic without performance drops.</li></ul>",
-		imageSrc:
-			"/img/projects/yotpo-desktop.webp",
-		imageAlt: "Yotpo",
+			"I built a block-based page builder and AI content workflows so Yotpo’s marketing team can ship campaigns without waiting on engineering — on a site that has to hold enterprise traffic.",
+		mainContent: `<ul>
+			<li><strong>The Challenge:</strong> yotpo.com is a high-traffic marketing site. The team needed to iterate on campaigns quickly, keep performance stable under load, and track what converted — without a developer ticket for every page.</li>
+			<li><strong>The Solution:</strong> I built a custom Gutenberg block-based page builder so marketing can assemble pages themselves. I added AI workflows to speed up front-end and content production, and set up AWS caching, migration, and security so the site holds under load.</li>
+			<li><strong>The Tech Stack:</strong> WordPress, AWS, custom Gutenberg blocks, AI workflows, A/B testing, analytics.</li>
+			<li><strong>The Impact:</strong> Marketing launches, tests, and optimizes campaigns without waiting on engineering. The site stays up under enterprise traffic.</li>
+		</ul>`,
+		imageSrc: "/img/projects/yotpo-desktop.webp",
+		imageAlt: "Yotpo marketing website",
 		tags: ["WordPress", "AWS"],
 		href: "https://yotpo.com/",
 	},
 	{
 		title: "Ultimate Poker Coaching",
-		innerTitle: "A Frictionless Marketplace & Scheduling Platform",
-		mainContent:
-			"<ul><li><strong>The Challenge:</strong> The client required a centralized, all-in-one platform to seamlessly connect poker coaches with students, needing to handle everything from user discovery to secure payments and calendar management without bottlenecks. <li><strong>The Solution:</strong> I engineered a custom, multi-functional WordPress platform designed to automate the entire coaching lifecycle. I integrated Stripe for secure, automated payment processing and built robust scheduling features that allow coaches to manage their availability effortlessly. The infrastructure was routed through Cloudflare to guarantee fast global delivery and enterprise-grade security. <li><strong>The Tech Stack:</strong> Custom WordPress, Stripe API Integration, Cloudflare, Complex Scheduling Architecture. <li><strong>The Impact:</strong> Created a seamless end-to-end user experience that eliminated administrative friction, empowering coaches to easily monetize their skills and allowing the business to scale its user base and revenue efficiently.</li></ul>",
+		innerTitle: "Marketplace, payments, and calendar in one platform",
 		description:
-			"Architected a custom, multi-functional marketplace platform to seamlessly connect coaches with students and manage the entire coaching lifecycle. Integrated automated Stripe payment processing and robust calendar scheduling within a secure, Cloudflare-backed infrastructure. This created a frictionless user experience that empowered coaches to effortlessly monetize their skills and scale revenue.",
-		imageSrc:
-			"/img/projects/ultimatepokercoaching-desktop.webp",
-		imageAlt: "Ultimate Poker Coaching",
+			"I built a coaching marketplace on WordPress: discovery, Stripe payments, and scheduling, delivered through Cloudflare.",
+		mainContent: `<ul>
+			<li><strong>The Challenge:</strong> The client needed one platform to connect poker coaches with students — discovery, payments, and calendars — instead of stitching together separate tools.</li>
+			<li><strong>The Solution:</strong> I built a custom WordPress marketplace for the coaching lifecycle: Stripe for payments, scheduling so coaches manage their own availability, and Cloudflare for delivery and security.</li>
+			<li><strong>The Tech Stack:</strong> Custom WordPress, Stripe, Cloudflare, scheduling.</li>
+			<li><strong>The Impact:</strong> Coaches can take bookings and get paid in one place. The business can add users without adding admin overhead.</li>
+		</ul>`,
+		imageSrc: "/img/projects/ultimatepokercoaching-desktop.webp",
+		imageAlt: "Ultimate Poker Coaching marketplace",
 		tags: ["WordPress", "Cloudflare", "Stripe"],
 		href: "https://ultimatepokercoaching.com/",
 		reverse: true,
 	},
 	{
 		title: "Sensity AI",
-		innerTitle: "A High-Performance Multilingual Hub for Cutting-Edge AI Security",
-		mainContent: "<ul><li><strong>The Challenge:</strong> A sophisticated AI security company needed a powerful digital presence to showcase their \"forensic-grade deepfake detection hub\". The site had to communicate complex technical concepts globally, rank highly in search engines, and be easily scalable by their internal marketing team. <li><strong>The Solution:</strong> I built a blazing-fast, multilingual marketing website specifically optimized for performance and global SEO. The architecture was designed to flawlessly present custom, high-fidelity visuals of their deepfake investigations while providing an intuitive, flexible backend for the marketing team to rapidly deploy new content and campaigns. <li><strong>The Tech Stack:</strong> High-Performance Web Development, Multilingual Architecture, Technical SEO Optimization, Custom Visual Integrations. <li><strong>The Impact:</strong> Delivered a globally accessible, lightning-fast digital asset that ranks competitively in search engines and provides the marketing team with total autonomy to scale their content and drive lead generation without relying on constant developer support.</li></ul>",
+		innerTitle: "A multilingual marketing site for AI security",
 		description:
-			"Built a high-performance, multilingual digital hub designed to showcase forensic-grade AI security investigations globally. Optimized the technical architecture for top-tier SEO, custom high-fidelity visual delivery, and rapid content scaling. This provided the marketing team with a blazing-fast, autonomous asset to drive global lead generation.",
-		imageSrc:
-			"/img/projects/sensity-desktop.webp",
-		imageAlt: "Sensity AI",
+			"I built Sensity’s multilingual marketing site so a complex AI-security story could rank, load, and be updated by their team — not by a developer queue.",
+		mainContent: `<ul>
+			<li><strong>The Challenge:</strong> An AI security company needed a site that could explain deepfake detection to a global audience, rank in search, and be updated by marketing without a developer queue.</li>
+			<li><strong>The Solution:</strong> I built a multilingual marketing site focused on performance and SEO, with a backend marketing can publish to, and support for their custom investigation visuals.</li>
+			<li><strong>The Tech Stack:</strong> WordPress, multilingual architecture, technical SEO, custom visuals.</li>
+			<li><strong>The Impact:</strong> The team publishes and scales content themselves. The site is built to rank and to load for a global audience.</li>
+		</ul>`,
+		imageSrc: "/img/projects/sensity-desktop.webp",
+		imageAlt: "Sensity AI marketing website",
 		tags: ["WordPress"],
 		href: "https://sensity.ai/",
 	},
 	{
 		title: "Hermes Plugin",
-		innerTitle: "Centralizing Infrastructure for High-Traffic iGaming Media",
-		mainContent: "<ul><li><strong>The Challenge:</strong> Managing and scaling functionality across multiple high-traffic media websites (attracting millions of monthly visitors) in the fiercely competitive iGaming industry. <li><strong>The Solution:</strong> Maintained, optimized, and significantly extended a centralized custom WordPress plugin (Hermes) that powers multiple company domains. I developed tailored Gutenberg blocks for rapid content deployment, integrated complex third-party APIs, and engineered custom usage-tracking solutions. <li><strong>The Tech Stack:</strong> WordPress Plugin Development, PHP, Third-Party API Integration, Gutenberg, Web Performance Optimization. <li><strong>The Impact:</strong> Delivered lightning-fast loading times and seamless user experiences for millions of users, while drastically reducing the operational overhead for content teams by centralizing multi-site management into a single powerful plugin.</li></ul>",
+		innerTitle: "One plugin for several high-traffic media sites",
 		description:
-			"Maintained and significantly extended a centralized custom WordPress plugin that powers multiple high-traffic media domains in the competitive iGaming sector. Developed tailored Gutenberg blocks and complex API integrations to streamline multi-site content management. This drastically reduced operational overhead while ensuring lightning-fast performance for millions of monthly visitors.",
-		imageSrc:
-			"/img/projects/onthedotmedia-desktop.png",
-		imageAlt: "",
+			"I extended the plugin that powers several high-traffic iGaming media sites — shared blocks, APIs, and tracking instead of per-site snowflakes.",
+		mainContent: `<ul>
+			<li><strong>The Challenge:</strong> Functionality had to be maintained and scaled across several high-traffic iGaming media sites, not rebuilt per domain.</li>
+			<li><strong>The Solution:</strong> I maintained and extended Hermes, a central WordPress plugin: custom Gutenberg blocks, third-party APIs, and usage tracking shared across the company’s sites.</li>
+			<li><strong>The Tech Stack:</strong> WordPress plugin development, PHP, Google Cloud, third-party APIs, Gutenberg.</li>
+			<li><strong>The Impact:</strong> Content teams manage multiple sites from one plugin. Shared blocks and APIs cut the overhead of shipping the same feature N times.</li>
+		</ul>`,
+		imageSrc: "/img/projects/onthedotmedia-desktop.png",
+		imageAlt: "High-traffic iGaming media sites powered by Hermes",
 		tags: ["WordPress", "Google Cloud"],
 		href: "#",
 		reverse: true,
-	}
+	},
 ];
 
 const socialLinks: SocialLink[] = [
@@ -179,17 +193,18 @@ const socialLinks: SocialLink[] = [
 ];
 
 const ctaActions: CtaAction[] = [
-	{ label: "Book a Meeting", href: "https://calendar.app.google/cKy7EK93wS6esepB6", variant: "primary", target: "_blank" },
-	{ label: "Email Me", href: "mailto:me@nikolaynikolaev.com", variant: "secondary", target: "_self" },
+	{ label: "Book a call", href: "https://calendar.app.google/cKy7EK93wS6esepB6", variant: "primary", target: "_blank" },
+	{ label: "Email me", href: "mailto:me@nikolaynikolaev.com", variant: "secondary", target: "_self" },
 ];
 
 const heroCodeSnippet = `const Engineer = {
   name: 'Nick',
   role: 'Full Stack Web Engineer',
   skills: [
-    'Software Engineering',
-	'Infrastructure', 'SEO/GEO',
-	'AI Integration',
+    'Marketing systems',
+    'Infrastructure',
+    'Applied AI',
+    'Growth engineering',
   ],
   mission: 'Engineered for Growth',
   execute: () => {
@@ -208,7 +223,7 @@ const currentYear = new Date().getFullYear();
 	>
 		<a href="/" class="flex items-center gap-4">
 			<img
-				alt="Nikolay Nikolaev Logo"
+				alt="Nick Nikolaev"
 				class="h-10 w-auto"
 				src="/img/logos/nn-logo-transp.webp"
 				width="40"
@@ -246,7 +261,7 @@ const currentYear = new Date().getFullYear();
 				href="#contact"
 				class="btn-primary inline-flex items-center px-6 py-2 rounded font-label-caps text-label-caps uppercase go-to-section"
 			>
-				Let's Talk
+				Let's talk
 			</a>
 		</div>
 	</div>
@@ -282,20 +297,32 @@ const currentYear = new Date().getFullYear();
 						<span
 							class="font-label-caps text-label-caps uppercase text-primary font-bold"
 						>
-							Available for new opportunities
+							Available for new projects
 						</span>
 					</div>
 					<h1
 						class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-background mb-stack-lg max-w-3xl"
 					>
-						Engineered for Growth
+						Engineered
+						<br/>
+						so marketing
+						<br/>
+						can ship
 					</h1>
 					<p
 						class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-xl text-xl"
 					>
-						Empowering marketing teams and tech leaders with seamless technical setups, lightning-fast web applications, and reliable infrastructure. I take the technical heavy lifting off your plate so you can focus on driving traffic and scaling revenue.
+						I build the CMS, infrastructure, and growth stack so marketing can launch — and the site holds up when traffic hits.
 					</p>
-					<div class="flex gap-4 mt-stack-md">
+					<div class="flex flex-wrap gap-4 mt-stack-md">
+						<a
+							href="https://calendar.app.google/cKy7EK93wS6esepB6"
+							class="btn-primary inline-flex items-center px-8 py-4 rounded font-label-caps text-label-caps uppercase tracking-wider"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Book a call
+						</a>
 						<a
 							href="#projects"
 							class="go-to-section btn-inverse inline-flex items-center px-8 py-4 rounded font-label-caps text-label-caps uppercase tracking-wider"
@@ -323,17 +350,17 @@ const currentYear = new Date().getFullYear();
 		</div>
 	</section>
 
-	<!-- Trusted by -->
+	<!-- Clients -->
 	<section
-		id="partners"
+		id="clients"
 		class="border-y border-surface-container-high py-section-gap bg-surface-container-lowest"
-		aria-label="Trusted by"
+		aria-label="Clients"
 	>
 		<div class="max-w-container-max mx-auto px-margin-page">
 			<p
 				class="font-label-caps text-label-caps uppercase text-outline font-bold text-center mb-8 tracking-widest"
 			>
-				Trusted by tech leaders at
+				Work I’ve shipped for
 			</p>
 			<div
 				class="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]"
@@ -422,7 +449,7 @@ const currentYear = new Date().getFullYear();
 		</div>
 	</section>
 
-	<!-- Featured Work -->
+	<!-- Case studies -->
 	<section
 		id="projects"
 		class="py-section-gap bg-on-background text-surface px-margin-page"
@@ -432,16 +459,16 @@ const currentYear = new Date().getFullYear();
 				<h2
 					class="font-headline-lg text-headline-lg text-surface mb-stack-sm"
 				>
-					Real-World Implementations
+					Case studies
 				</h2>
 				<p
 					class="font-body-md text-body-md text-surface-variant max-w-2xl text-lg"
 				>
-					Showcasing real-world implementations of technical solutions that have driven measurable business results.
+					Platforms where marketing could ship without waiting on engineering — or where the stack had to hold high-traffic media.
 				</p>
 			</div>
 
-			<ProjectsSlider projects={projects} />
+			<ProjectsSlider projects={projects} ariaLabel="Case studies" />
 		</div>
 	</section>
 
@@ -456,12 +483,12 @@ const currentYear = new Date().getFullYear();
 			<h2
 				class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-background mb-stack-md"
 			>
-				Free Consultation
+				Let’s talk
 			</h2>
 			<p
 				class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto"
 			>
-				Book a 30-minute, zero-pressure strategy call. There is no sales pitch. We will look under the hood of your current technical setup and identify bottlenecks. You will walk away with actionable advice and clear recommendations to scale your web presence—whether we decide to work together or not.
+				Book a 30-minute call. No pitch. We’ll look at your current setup, find what’s blocking shipping or performance, and you’ll leave with a short list of next steps — whether we work together or not.
 			</p>
 			<div
 				class="flex flex-col sm:flex-row justify-center items-center gap-6"
@@ -477,6 +504,7 @@ const currentYear = new Date().getFullYear();
 									: "btn-secondary",
 							]}
 							target={action.target}
+							rel={action.target === "_blank" ? "noopener noreferrer" : undefined}
 						>
 							{action.label}
 						</a>
@@ -500,12 +528,14 @@ const currentYear = new Date().getFullYear();
 			<p
 				class="font-body-md text-body-md text-on-surface-variant max-w-sm"
 			>
-				Empowering marketing teams and tech leaders with seamless technical setups, lightning-fast web applications, and reliable infrastructure.
+				Marketing platforms, infrastructure,
+				<br />
+				and growth engineering.
 			</p>
 			<p
 				class="font-body-md text-body-md text-on-surface-variant opacity-80 mt-8"
 			>
-				© {currentYear} Nikolay Nikolaev. Full Stack Engineer.
+				© {currentYear} Nikolay Nikolaev.
 			</p>
 		</div>
 		<nav
