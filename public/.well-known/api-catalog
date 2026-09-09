@@ -1,0 +1,35 @@
+{
+    "linkset": [
+        {
+            "anchor": "https://nikolaynikolaev.com/",
+            "alternate": [
+                {
+                    "href": "https://nikolaynikolaev.com/index.md",
+                    "type": "text/markdown"
+                }
+            ],
+            "describedby": [
+                {
+                    "href": "https://nikolaynikolaev.com/llms.txt",
+                    "type": "text/plain"
+                },
+                {
+                    "href": "https://nikolaynikolaev.com/.well-known/security.txt",
+                    "type": "text/plain"
+                }
+            ],
+            "service-desc": [
+                {
+                    "href": "https://nikolaynikolaev.com/.well-known/agent-skills/index.json",
+                    "type": "application/json"
+                }
+            ],
+            "item": [
+                {
+                    "href": "https://nikolaynikolaev.com/sitemap.xml",
+                    "type": "application/xml"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+# Nick Nikolaev
+
+> Full-stack web engineer. Builds marketing CMS, infrastructure, and growth stack so marketing teams can ship without waiting on engineering.
+
+This is a personal site, not a product or an API. The public name is Nick Nikolaev (Nikolay Nikolaev). Available for new projects. Book a 30-minute call or email — no pitch; the call is a look at the current setup and a short list of next steps.
+
+Four systems he ships with: marketing systems (WordPress, Shopify, custom CMS), infrastructure (AWS, Google Cloud, Cloudflare), applied AI (integrations and agentic workflows), and growth engineering (SEO, GEO / AI search, A/B testing, analytics).
+
+## Site
+
+- [Home](https://nikolaynikolaev.com/index.md): The whole site — clients, how I ship, case studies, and contact.
+
+## Case studies
+
+- [Yotpo](https://yotpo.com/): Block-based Gutenberg page builder and AI content workflows on a high-traffic WordPress marketing site, with AWS caching and security.
+- [Ultimate Poker Coaching](https://ultimatepokercoaching.com/): WordPress coaching marketplace with Stripe payments, scheduling, and Cloudflare delivery.
+- [Sensity AI](https://sensity.ai/): Multilingual marketing site for an AI-security / deepfake-detection company, built for SEO and marketing self-serve.
+- [Hermes plugin](https://nikolaynikolaev.com/#projects): Shared WordPress plugin (Gutenberg blocks, third-party APIs, tracking) used across several high-traffic iGaming media sites.
+
+## Contact
+
+- [Book a call](https://calendar.app.google/cKy7EK93wS6esepB6): 30-minute intro.
+- [Email](mailto:me@nikolaynikolaev.com): Direct email.
+
+## Optional
+
+- [LinkedIn](https://www.linkedin.com/in/nikolay-nikolaev-78992268/): Professional profile.
+- [GitHub](https://github.com/nnikolaev12): Code.
+- [Sitemap](https://nikolaynikolaev.com/sitemap.xml): Indexable URLs.
+- [security.txt](https://nikolaynikolaev.com/.well-known/security.txt): Vulnerability disclosure contact.
+- [API catalog](https://nikolaynikolaev.com/.well-known/api-catalog): Linkset of this site's discovery files (markdown, skills, sitemap, security.txt).
+- [Agent skills](https://nikolaynikolaev.com/.well-known/agent-skills/index.json): Skills this site publishes, including fetch-content-as-markdown.

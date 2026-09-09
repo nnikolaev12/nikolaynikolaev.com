@@ -1,0 +1,4 @@
+Contact: mailto:me@nikolaynikolaev.com
+Expires: 2027-09-01T00:00:00.000Z
+Canonical: https://nikolaynikolaev.com/.well-known/security.txt
+Preferred-Languages: en

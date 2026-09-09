@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+    "skills": [
+        {
+            "name": "fetch-content-as-markdown",
+            "type": "skill-md",
+            "description": "Fetch this site's content as Markdown via llms.txt, and per-page .md endpoints.",
+            "url": "https://nikolaynikolaev.com/.well-known/agent-skills/fetch-content-as-markdown/SKILL.md",
+            "digest": "sha256:697bbbaf61c86e3f31ceae80712dfcf103641197f12ebe4ac33442e9e8ad6ea9"
+        }
+    ]
+}
