@@ -333,16 +333,42 @@ const currentYear = new Date().getFullYear();
 				</div>
 				<div class="hidden lg:flex justify-end items-center relative">
 					<div
-						class="w-4/5 aspect-square bg-gradient-to-tr from-primary to-primary-container rounded-2xl shadow-2xl transform rotate-3 flex items-center justify-center p-8 overflow-hidden relative"
+						class="hero-flip w-4/5 aspect-square"
+						tabindex="0"
+						aria-label="Card for Nick Nikolaev. Hover or focus to flip it."
 					>
-						<div
-							class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"
-						>
-						</div>
-						<div
-							class="font-code-snippet text-on-primary w-full max-h-full overflow-hidden text-sm opacity-80 leading-relaxed shadow-inner bg-on-background/10 p-6 rounded-lg"
-						>
-							<pre><code>{heroCodeSnippet}</code></pre>
+						<div class="hero-flip-inner">
+							<div class="hero-flip-face">
+								<div
+									class="h-full w-full overflow-hidden rounded-2xl bg-surface shadow-2xl"
+								>
+									<img
+										src="/img/me.webp"
+										alt="Nick Nikolaev"
+										width="675"
+										height="675"
+										class="h-full w-full origin-[center_38%] object-cover"
+										draggable="false"
+										loading="eager"
+										decoding="async"
+									/>
+								</div>
+							</div>
+							<div class="hero-flip-face hero-flip-face-back">
+								<div
+									class="flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-tr from-primary to-primary-container p-8 shadow-2xl relative"
+								>
+									<div
+										class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"
+									>
+									</div>
+									<div
+										class="font-code-snippet text-on-primary w-full max-h-full overflow-hidden text-sm opacity-80 leading-relaxed shadow-inner bg-on-background/10 p-6 rounded-lg"
+									>
+										<pre><code>{heroCodeSnippet}</code></pre>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -569,3 +595,49 @@ const currentYear = new Date().getFullYear();
 <script>
 	import "./main";
 </script>
+
+<style>
+	.hero-flip {
+		perspective: 1400px;
+		cursor: pointer;
+	}
+
+	.hero-flip:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 8px;
+		border-radius: 1rem;
+	}
+
+	.hero-flip-inner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transform-style: preserve-3d;
+		transform: rotate(3deg);
+		transition: transform 700ms cubic-bezier(0.45, 0.05, 0.2, 1);
+	}
+
+	.hero-flip:hover .hero-flip-inner,
+	.hero-flip:focus-visible .hero-flip-inner {
+		transform: rotate(3deg) rotateY(180deg);
+	}
+
+	.hero-flip-face {
+		position: absolute;
+		inset: 0;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		transform: translateZ(1px);
+		pointer-events: none;
+	}
+
+	.hero-flip-face-back {
+		transform: rotateY(180deg) translateZ(1px);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.hero-flip-inner {
+			transition: none;
+		}
+	}
+</style>
